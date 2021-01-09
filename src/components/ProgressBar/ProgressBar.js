@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+/** Progress bar that scales and changes color based on percentage */
 const ProgressBar = ({ percent, width, height = 5 }) => {
   const getColor = () => {
     if (percent === 100) return 'green';
