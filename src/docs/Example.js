@@ -32,7 +32,7 @@ class Example extends React.Component {
           </a>
         </p>
 
-        {showCode && { code }}
+        {showCode && code}
       </div>
     );
   }
