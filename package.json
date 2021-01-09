@@ -151,28 +151,9 @@
   "babel": {
     "presets": [
       "react-app"
-    ],
-    "plugins": [
-      [
-        "prismjs",
-        {
-          "languages": [
-            "javascript",
-            "css",
-            "html"
-          ],
-          "plugins": [
-            "line-numbers",
-            "show-language"
-          ],
-          "theme": "base16-ateliersulphurpool.light",
-          "css": true
-        }
-      ]
     ]
   },
   "devDependencies": {
-    "babel-plugin-prismjs": "^2.0.1",
     "chokidar": "^3.5.0",
     "npm-run-all": "^4.1.5",
     "react-docgen": "^5.3.1"
