@@ -1,4 +1,4 @@
-import HelloWorld from '../../../components/HelloWorld/HelloWorld';
+import HelloWorld from 'ps-react/HelloWorld/HelloWorld';
 
 /**
  * Custom message
