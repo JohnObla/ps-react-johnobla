@@ -1,4 +1,4 @@
-import fs, { writeFile } from 'fs';
+import fs, { readFile, writeFile } from 'fs';
 import path from 'path';
 import chalk from 'chalk';
 import reactDocgen from 'react-docgen';
@@ -9,6 +9,38 @@ const paths = {
   examples: path.join(__dirname, '../src', 'docs', 'examples'),
   components: path.join(__dirname, '../src', 'components'),
   output: path.join(__dirname, '../config', 'componentData.js'),
+};
+
+const getComponentData = (paths, componentName) => {
+  const content = readFile(
+    path.join(paths.components, componentName, `${componentName}.js`)
+  );
+  const info = parse(content);
+  return {
+    name: componentName,
+    description: info.description,
+    props: info.props,
+    code: content,
+    examples: getExampleData(paths.examples, componentName),
+  };
+};
+
+const getExampleFiles = params => {};
+
+const getExampleData = (examplesPath, componentName) => {
+  const examples = getExampleFiles(examplesPath, componentName);
+  return examples.map(file => {
+    const filePath = path.join(examplesPath, componentName, file);
+    const content = readFile(filePath);
+    const info = parse(content);
+    return {
+      // By convention, component name should match the filename.
+      // So remove the .js extension to get the component name.
+      name: file.slice(0, -3),
+      description: info.description,
+      code: content,
+    };
+  });
 };
 
 const generate = paths => {
