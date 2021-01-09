@@ -1,13 +1,13 @@
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import Prism from 'prismjs';
-import './themes/prism-base16-ateliersulphurpool.light.css';
+import './themes/prism-solarizedlight.css';
 
 const CodeExample = ({ children }) => {
   useEffect(() => Prism.highlightAll(), []);
 
   return (
-    <pre className="line-numbers">
+    <pre>
       <code className="language-javascript">{children}</code>
     </pre>
   );
