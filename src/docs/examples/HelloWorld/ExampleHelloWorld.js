@@ -1,4 +1,4 @@
-import HelloWorld from 'ps-react/HelloWorld/HelloWorld';
+import HelloWorld from 'ps-react/HelloWorld/';
 
 /**
  * Custom message
