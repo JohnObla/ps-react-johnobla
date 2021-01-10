@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import './ProgressBar.scss';
 
 /** Progress bar that scales and changes color based on percentage */
 const ProgressBar = ({ percent, width, height = 5 }) => {
@@ -13,7 +14,7 @@ const ProgressBar = ({ percent, width, height = 5 }) => {
     parseInt(width * (percent / 100), 10);
 
   return (
-    <div style={{ border: 'solid 1px lightgray', width }}>
+    <div className="ProgressBar" style={{ width }}>
       <div
         style={{
           width: getWidthAsPercentOfTotalWidth(),
