@@ -7,7 +7,6 @@ const Label = ({ htmlFor, label, required = false }) => (
     {label} {required && <span className="Label__required"> *</span>}
   </label>
 );
-export default Label;
 
 Label.propTypes = {
   /** HTML ID for associated input */
@@ -19,3 +18,5 @@ Label.propTypes = {
   /** Display asterisk after label if true */
   required: PropTypes.bool,
 };
+
+export default Label;
