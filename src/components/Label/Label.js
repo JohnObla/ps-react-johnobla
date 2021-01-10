@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import './Label.scss';
 
 /** Label with required field display, htmlFor and block styling */
 const Label = ({ htmlFor, label, required = false }) => (
