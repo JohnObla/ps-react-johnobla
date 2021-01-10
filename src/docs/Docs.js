@@ -4,13 +4,13 @@ import ComponentPage from './ComponentPage';
 import componentData from '../../config/componentData';
 
 const Docs = () => {
-  const [route, setRoute] = useState(window.location.hash.substr(1));
+  const getCurrentHash = () => window.location.hash.substr(1);
+
+  const [route, setRoute] = useState(getCurrentHash());
 
   useEffect(
     () =>
-      window.addEventListener('hashchange', () => {
-        setRoute(window.location.hash.substr(1));
-      }),
+      window.addEventListener('hashchange', () => setRoute(getCurrentHash())),
     []
   );
 
