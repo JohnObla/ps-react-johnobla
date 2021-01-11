@@ -33,16 +33,18 @@ const RegistrationForm = ({
   };
 
   const validate = ({ email, password }) => {
+    setErrors({});
+
     if (!email) {
-      setErrors({ ...errors, email: 'Email required' });
+      setErrors(prevErrors => ({ ...prevErrors, email: 'Email required' }));
     }
     console.log(errors);
 
     if (password.length < minPasswordLength) {
-      setErrors({
-        ...errors,
+      setErrors(prevErrors => ({
+        ...prevErrors,
         password: `Password must be at least ${minPasswordLength} characters.`,
-      });
+      }));
     }
     console.log(errors);
 
