@@ -1,0 +1,11 @@
+.TextInput {
+  &__input {
+    &--has-error {
+      border: solid 1px red;
+    }
+  }
+
+  &__error {
+    color: red;
+  }
+}
