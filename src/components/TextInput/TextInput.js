@@ -26,7 +26,7 @@ const TextInput = ({
       name={name}
       placeholder={placeholder}
       value={value}
-      onChange={onchange}
+      onChange={onChange}
       {...props}
     />{' '}
     {children}
