@@ -10,16 +10,18 @@ import './PasswordInput.scss';
 const PasswordInput = ({
   htmlId,
   value,
-  label,
+  label = 'Password',
   error,
   onChange,
   placeholder,
-  maxLength,
-  showVisibilityToggle,
+  maxLength = 50,
+  showPasswordInitially = false,
   quality,
   ...props
 }) => {
-  const [showPassword, toggleShowPassword] = useToggleBool(false);
+  const [showPassword, toggleShowPassword] = useToggleBool(
+    showPasswordInitially
+  );
 
   const handleToggle = event => {
     toggleShowPassword();
@@ -39,7 +41,7 @@ const PasswordInput = ({
       required
       {...props}
     >
-      {showVisibilityToggle && (
+      {showPassword && (
         <a className="PasswordInput__toggle" href="#" onClick={handleToggle}>
           <EyeIcon />
         </a>
@@ -49,6 +51,38 @@ const PasswordInput = ({
       )}
     </TextInput>
   );
+};
+
+PasswordInput.propTypes = {
+  /** Unique HTML ID. Used for tying label to HTML input. Handy hook for automated testing. */
+  htmlId: PropTypes.string.isRequired,
+
+  /** Input name. Recommend setting this to match object's property so a single change handler can be used*/
+  name: PropTypes.string.isRequired,
+
+  /** Password Value */
+  value: PropTypes.any,
+
+  /** Input label */
+  label: PropTypes.string.isRequired,
+
+  /** Function called when password input value changes */
+  onChange: PropTypes.func.isRequired,
+
+  /** Max password length accepted */
+  maxLength: PropTypes.number,
+
+  /** Placeholder to display when no password is entered */
+  placeholder: PropTypes.string,
+
+  /** When set to true, shows the toggle for displaying the currently entered password */
+  showPasswordInitially: PropTypes.bool,
+
+  /** Displaypassword quality visually via ProgressBar, accepts a number between 0 and 100 */
+  quality: PropTypes.number,
+
+  /** Validation error to display */
+  error: PropTypes.string,
 };
 
 export default PasswordInput;
