@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './ProgressBar.scss';
 
 /** Progress bar that scales and changes color based on percentage */
 const ProgressBar = ({ percent, width, height = 5 }) => {

@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Label from '../Label';
-import './TextInput.scss';
 
 /** Text input with integrated label to enforce consistency in layout, error display, label placement, and required field marker. */
 const TextInput = ({

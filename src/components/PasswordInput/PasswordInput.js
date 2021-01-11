@@ -4,7 +4,6 @@ import useToggleBool from '../../hooks/useToggleBool';
 import ProgressBar from '../ProgressBar';
 import EyeIcon from '../EyeIcon';
 import TextInput from '../TextInput';
-import './PasswordInput.scss';
 
 /** Password inpuit with integratedlabel, quality tips, and show password toggle. */
 const PasswordInput = ({
