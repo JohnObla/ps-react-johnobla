@@ -9,7 +9,7 @@ const ExampleOptional = () => {
       label="First Name"
       name="firstname"
       onChange={() => {}}
-    ></TextInput>
+    />
   );
 };
 
