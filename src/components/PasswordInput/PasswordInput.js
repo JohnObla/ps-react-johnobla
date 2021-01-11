@@ -64,7 +64,7 @@ PasswordInput.propTypes = {
   value: PropTypes.any,
 
   /** Input label */
-  label: PropTypes.string.isRequired,
+  label: PropTypes.string,
 
   /** Function called when password input value changes */
   onChange: PropTypes.func.isRequired,
