@@ -14,6 +14,8 @@ const Docs = () => {
     []
   );
 
+  console.log(route);
+
   const component = route
     ? componentData.filter(component => component.name === route)[0]
     : componentData[0];
