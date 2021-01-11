@@ -23,7 +23,7 @@ const Props = ({ props }) => {
               <td>
                 {props[key].defaultValue && props[key].defaultValue.value}
               </td>
-              <td>{props[key].required ? 'Yes' : 'No'}</td>
+              <td>{props[key].required && 'X'}</td>
             </tr>
           );
         })}
