@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import PasswordInput from '../PasswordInput';
 import TextInput from '../TextInput';
 
+/** Registration form with built-in validation */
 const RegistrationForm = ({
   minPasswordLength = 8,
   onSubmit,
