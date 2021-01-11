@@ -46,7 +46,8 @@ const RegistrationForm = ({
     return isValidForm;
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = event => {
+    event.preventDefault();
     const isValidForm = validate(user);
     if (isValidForm) {
       onSubmit(user);
@@ -57,7 +58,7 @@ const RegistrationForm = ({
   return submitted ? (
     <h2>{confirmationMessage}</h2>
   ) : (
-    <div>
+    <form>
       <TextInput
         htmlId="RegistrationForm__email"
         name="email"
@@ -79,8 +80,10 @@ const RegistrationForm = ({
         error={errors.password}
       />
 
-      <input type="submit" value="Register" onClick={handleSubmit} />
-    </div>
+      <button type="submit" onClick={handleSubmit}>
+        Register
+      </button>
+    </form>
   );
 };
 
