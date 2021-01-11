@@ -42,9 +42,9 @@ const PasswordInput = ({
       {...props}
     >
       {
-        <a className="PasswordInput__toggle" href="#" onClick={handleToggle}>
+        <button className="PasswordInput__toggle" onClick={handleToggle}>
           <EyeIcon />
-        </a>
+        </button>
       }
       {value.length > 0 && quality && (
         <ProgressBar percent={quality} width={130} />

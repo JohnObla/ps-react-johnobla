@@ -33,13 +33,18 @@ const RegistrationForm = ({
   };
 
   const validate = ({ email, password }) => {
-    if (!email) setErrors({ ...errors, email: 'Email required' });
+    if (!email) {
+      setErrors({ ...errors, email: 'Email required' });
+    }
+    console.log(errors);
 
-    if (password.length < minPasswordLength)
+    if (password.length < minPasswordLength) {
       setErrors({
         ...errors,
         password: `Password must be at least ${minPasswordLength} characters.`,
       });
+    }
+    console.log(errors);
 
     const isValidForm = errors.length === 0;
 
@@ -48,6 +53,7 @@ const RegistrationForm = ({
 
   const handleSubmit = event => {
     event.preventDefault();
+
     const isValidForm = validate(user);
     if (isValidForm) {
       onSubmit(user);
