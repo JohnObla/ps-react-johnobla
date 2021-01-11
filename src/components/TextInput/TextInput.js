@@ -28,7 +28,7 @@ const TextInput = ({
       value={value}
       onChange={onChange}
       {...props}
-    />{' '}
+    />
     {children}
     {error && <div className="TextInput__error">{error}</div>}
   </div>
