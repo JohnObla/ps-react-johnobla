@@ -15,6 +15,7 @@ const ProgressBar = ({ percent, width, height = 5 }) => {
   return (
     <div className="ProgressBar" style={{ width }}>
       <div
+        className="ProgressBar__bar"
         style={{
           width: getWidthAsPercentOfTotalWidth(),
           height,
