@@ -69,14 +69,17 @@
     "webpack-manifest-plugin": "2.2.0",
     "workbox-webpack-plugin": "5.1.4"
   },
+  "homepage": "http://johnobla.github.io/ps-react-johnobla/",
   "scripts": {
     "prestart": "yarn gen:docs",
     "start": "npm-run-all --parallel start:docs gen:docs-watch",
     "start:docs": "node scripts/start.js",
     "gen:docs": "node scripts/generateComponentData.js",
     "gen:docs-watch": "yarn gen:docs --watch",
-    "build": "node scripts/build.js",
-    "test": "node scripts/test.js"
+    "build:docs": "node scripts/build.js",
+    "test": "node scripts/test.js",
+    "predeploy:docs": "yarn build:docs",
+    "deploy:docs": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
@@ -158,6 +161,7 @@
     "chokidar": "^3.5.0",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.5",
+    "gh-pages": "^3.1.0",
     "npm-run-all": "^4.1.5",
     "react-addons-test-utils": "^15.6.2",
     "react-docgen": "^5.3.1",
