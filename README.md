@@ -2,7 +2,7 @@
 
 This project is a component library built using atomic design.
 
-Live site: 🚀https://johnobla.github.io/ps-react-johnobla/🚀
+Live site: 🚀https://johnobla.github.io/ps-react-johnobla/ 🚀
 
 - Documentation is auto-generated from each component using `react-docgen`.
 - Prop details, component examples, and related code are auto-extracted and displayed on the component's page.
